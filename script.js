@@ -33,6 +33,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // If credentials are correct, redirect to another page
     if (isValid) {
         event.preventDefault(); // Prevent the form from submitting in the traditional way
-        window.location.href = '/MinhaCentral.html'; // Redirect to the new page
+        window.location.href = 'MinhaCentral.html'; // Redirect to the new page
     }
 });
