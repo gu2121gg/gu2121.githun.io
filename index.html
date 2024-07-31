@@ -90,6 +90,36 @@
             </form>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o envio do formulário
+            
+            // Obtenha os valores dos campos
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Verifique se os campos são preenchidos
+            let valid = true;
+
+            if (username === '') {
+                document.getElementById('username-error').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('username-error').style.display = 'none';
+            }
+
+            if (password === '') {
+                document.getElementById('password-error').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('password-error').style.display = 'none';
+            }
+
+            // Se todos os campos forem válidos, redirecione para a página desejada
+            if (valid) {
+                window.location.href = 'Minha_Central.html'; // Redireciona para a página desejada
+            }
+        });
+    </script>
 </body>
 </html>
