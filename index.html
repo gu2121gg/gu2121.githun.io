@@ -80,11 +80,11 @@
             <form id="login-form">
                 <div class="textbox">
                     <input type="text" id="username" name="username" placeholder="Usuário" required>
-                    <span class="error-message" id="username-error">O campo usuário é obrigatório</span>
+                    <span class="error-message" id="username-error">Usuário inválido</span>
                 </div>
                 <div class="textbox">
                     <input type="password" id="password" name="password" placeholder="Senha" required>
-                    <span class="error-message" id="password-error">O campo senha é obrigatório</span>
+                    <span class="error-message" id="password-error">Senha inválida</span>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
             </form>
@@ -98,17 +98,20 @@
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value.trim();
 
-            // Verifique se os campos são preenchidos
+            // Verifique se os campos correspondem aos valores esperados
+            const validUsername = 'gu2121';
+            const validPassword = '2121';
+            
             let valid = true;
 
-            if (username === '') {
+            if (username !== validUsername) {
                 document.getElementById('username-error').style.display = 'block';
                 valid = false;
             } else {
                 document.getElementById('username-error').style.display = 'none';
             }
 
-            if (password === '') {
+            if (password !== validPassword) {
                 document.getElementById('password-error').style.display = 'block';
                 valid = false;
             } else {
